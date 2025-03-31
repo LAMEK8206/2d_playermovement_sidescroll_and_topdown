@@ -6,6 +6,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 const power :float = 50.0
 #مقادیر کنترل‌کننده‌ی بازیکن
 @export var check_player_mode :bool = true
+@export var move_player_in_tow_axic : bool =false
 @export var player_move_speed :float = 100.0
 @export var player_jump_power :float = 400.0
 
@@ -73,5 +74,11 @@ func _physics_process(delta: float) -> void:
 		elif Input.is_action_just_released("s_player_move_down") : 
 			velocity.y = 0
 			animated_sprite.play("s_idel")
+		
+		if move_player_in_tow_axic == true :
+			if Input.is_action_pressed("a_player_move_left") and Input.is_action_pressed("w_player_move_up") : velocity = Vector2.ZERO
+			elif Input.is_action_pressed("a_player_move_left") and Input.is_action_pressed("s_player_move_down") : velocity = Vector2.ZERO
+			elif Input.is_action_pressed("s_player_move_down") and Input.is_action_pressed("d_player_move_right") : velocity = Vector2.ZERO
+			elif Input.is_action_pressed("d_player_move_right") and Input.is_action_pressed("w_player_move_up") : velocity = Vector2.ZERO
 		
 	move_and_slide()

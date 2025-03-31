@@ -9,7 +9,7 @@ size = Vector2(128, 15)
 [node name="world" type="Node2D"]
 
 [node name="player" parent="." instance=ExtResource("1_nnsk1")]
-chek_player_mode = false
+check_player_mode = false
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 zoom = Vector2(4, 4)

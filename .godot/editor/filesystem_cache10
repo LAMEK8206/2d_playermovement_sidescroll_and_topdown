@@ -1,0 +1,12 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1743420124
+License.txt::TextFile/TextFile::-1::1743384322::0::1::::<><><>0<>0<><>::
+Sprite-0001.svg::CompressedTexture2D/CompressedTexture2D::8735603641127659875::1743382942::1743385136::1::::<><><>0<>0<>af47b1a3b1c7eda483bee3451a67c2d2<>res://.godot/imported/Sprite-0001.svg-166e8ac7dc881ff50fcada3cd880b5bf.ctex::
+::res://scenes/::1743385295
+player.tscn::PackedScene/PackedScene::7996004523064184768::1743383015::0::1::::<><><>0<>0<><>::uid://cnt1x8qtevmwg::::res://sprits/Prototype_Character_Blue.png<>uid://jyuhqa5dm770::::res://scripts/player.gd
+world.tscn::PackedScene::9105103387311627328::1743385295::0::1::::<><><>0<>0<><>::uid://dl6la5mjrlnae::::res://scenes/player.tscn<>uid://b5kbofp4ig4n4::::res://sprits/envierment.png
+::res://scripts/::1743381406
+player.gd::GDScript/GDScript::682472340993573417::1743381406::0::1::::<>CharacterBody2D<><>0<>0<><>::
+::res://sprits/::1743385136
+envierment.png::CompressedTexture2D/CompressedTexture2D::4512815775599510107::1742933002::1743385136::1::::<><><>0<>0<>74ae47f6dde101036c37cfe5615c5b4f<>res://.godot/imported/envierment.png-25710a41d28428d42134c92c7af70f99.ctex::
+Prototype_Character_Blue.png::CompressedTexture2D/CompressedTexture2D::5726140985936383338::1742933002::1743385136::1::::<><><>0<>0<>59df11da4b0bd27b44ff34d51c537719<>res://.godot/imported/Prototype_Character_Blue.png-91c1d9fed61737652606f505d70dafb3.ctex::
