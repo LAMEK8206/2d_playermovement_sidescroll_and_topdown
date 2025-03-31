@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2ytyth2f01mi"]
+
+[ext_resource type="PackedScene" uid="uid://dl6la5mjrlnae" path="res://scenes/player.tscn" id="1_nnsk1"]
+[ext_resource type="Texture2D" uid="uid://b5kbofp4ig4n4" path="res://sprits/envierment.png" id="2_rwgxs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4wyf3"]
+size = Vector2(128, 15)
+
+[node name="world" type="Node2D"]
+
+[node name="player" parent="." instance=ExtResource("1_nnsk1")]
+chek_player_mode = false
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+zoom = Vector2(4, 4)
+position_smoothing_enabled = true
+position_smoothing_speed = 6.0
+
+[node name="platforms" type="Node" parent="."]
+
+[node name="platform3" type="StaticBody2D" parent="platforms"]
+position = Vector2(-146, 31)
+
+[node name="Sprite2D" type="Sprite2D" parent="platforms/platform3"]
+texture = ExtResource("2_rwgxs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platforms/platform3"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_4wyf3")
+
+[node name="platform2" type="StaticBody2D" parent="platforms"]
+position = Vector2(157, 30)
+
+[node name="Sprite2D" type="Sprite2D" parent="platforms/platform2"]
+texture = ExtResource("2_rwgxs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platforms/platform2"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_4wyf3")
+
+[node name="platform" type="StaticBody2D" parent="platforms"]
+position = Vector2(0, 62)
+
+[node name="Sprite2D" type="Sprite2D" parent="platforms/platform"]
+texture = ExtResource("2_rwgxs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platforms/platform"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_4wyf3")
