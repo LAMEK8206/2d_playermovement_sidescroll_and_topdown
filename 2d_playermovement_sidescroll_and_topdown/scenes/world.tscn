@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://d2ytyth2f01mi"]
+[gd_scene format=3 uid="uid://d2ytyth2f01mi"]
 
 [ext_resource type="PackedScene" uid="uid://dl6la5mjrlnae" path="res://2d_playermovement_sidescroll_and_topdown/scenes/player.tscn" id="1_nnsk1"]
 [ext_resource type="Texture2D" uid="uid://b5kbofp4ig4n4" path="res://2d_playermovement_sidescroll_and_topdown/sprits/envierment.png" id="2_rwgxs"]
@@ -6,43 +6,44 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4wyf3"]
 size = Vector2(128, 15)
 
-[node name="world" type="Node2D"]
+[node name="world" type="Node2D" unique_id=549789722]
 
-[node name="player" parent="." instance=ExtResource("1_nnsk1")]
+[node name="player" parent="." unique_id=142901523 instance=ExtResource("1_nnsk1")]
+player_mode = true
 
-[node name="Camera2D" type="Camera2D" parent="player"]
+[node name="Camera2D" type="Camera2D" parent="player" unique_id=471582028]
 zoom = Vector2(4, 4)
 position_smoothing_enabled = true
 position_smoothing_speed = 6.0
 
-[node name="platforms" type="Node" parent="."]
+[node name="platforms" type="Node" parent="." unique_id=1487027117]
 
-[node name="platform3" type="StaticBody2D" parent="platforms"]
+[node name="platform3" type="StaticBody2D" parent="platforms" unique_id=843213286]
 position = Vector2(-146, 31)
 
-[node name="Sprite2D" type="Sprite2D" parent="platforms/platform3"]
+[node name="Sprite2D" type="Sprite2D" parent="platforms/platform3" unique_id=1876048814]
 texture = ExtResource("2_rwgxs")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="platforms/platform3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platforms/platform3" unique_id=1658592499]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_4wyf3")
 
-[node name="platform2" type="StaticBody2D" parent="platforms"]
+[node name="platform2" type="StaticBody2D" parent="platforms" unique_id=857322336]
 position = Vector2(157, 30)
 
-[node name="Sprite2D" type="Sprite2D" parent="platforms/platform2"]
+[node name="Sprite2D" type="Sprite2D" parent="platforms/platform2" unique_id=1670216385]
 texture = ExtResource("2_rwgxs")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="platforms/platform2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platforms/platform2" unique_id=944331250]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_4wyf3")
 
-[node name="platform" type="StaticBody2D" parent="platforms"]
+[node name="platform" type="StaticBody2D" parent="platforms" unique_id=1060187723]
 position = Vector2(0, 62)
 
-[node name="Sprite2D" type="Sprite2D" parent="platforms/platform"]
+[node name="Sprite2D" type="Sprite2D" parent="platforms/platform" unique_id=879075849]
 texture = ExtResource("2_rwgxs")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="platforms/platform"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platforms/platform" unique_id=1953530861]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_4wyf3")

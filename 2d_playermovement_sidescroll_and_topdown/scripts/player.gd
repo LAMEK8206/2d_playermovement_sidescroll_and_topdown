@@ -4,7 +4,13 @@ extends CharacterBody2D
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 #گرفتن کلید های ورودی برای حرکت
-@export var move_key : Array [Key] = [KEY_W,KEY_S,KEY_A,KEY_D,KEY_SPACE]
+@export var left_key : String = "ui_left"
+@export var right_key : String = "ui_right"
+@export var up_key : String = "ui_up"
+@export var down_key : String = "ui_down"
+@export var jump_key : String = "ui_accept"
+
+
 
 #مقادیر کنترل‌کننده‌ی بازیکن
 @export var player_mode :bool = true
@@ -26,27 +32,27 @@ var direct : Direct = Direct.non
 func _physics_process(delta: float) -> void:
 	
 	#دریافت جهت های حرکت 
-	var dirction = Vector2 (int(Input.is_key_pressed(move_key[3])) - int (Input.is_key_pressed(move_key[2])) ,
-							int (Input.is_key_pressed(move_key[1])) - int(Input.is_key_pressed(move_key[0])) )
+	var dirction = Vector2 (int(Input.is_action_pressed(right_key)) - int (Input.is_action_pressed(left_key)) ,
+							int (Input.is_action_pressed(down_key)) - int(Input.is_action_pressed(up_key)) )
 
 	#حرکت پلیر در حالت تاپ دون
 	if  player_mode == false : #چک کردن حالت
 		if dirction : 
-			if Input.is_key_pressed(move_key[3]) :
+			if Input.is_action_pressed(right_key) :
 				velocity.x = dirction.x * player_move_speed
 				animated_sprite.flip_h = false # چرخاندن انیمشن پلیر
 				animated_sprite.play("a&d_move") # کد اجرا کردن انیمشن
 				direct = Direct.right # دادن مقدار به متقیری که مقدار دایرکت را میگیر بقه هم مشابه همین هستند
-			if Input.is_key_pressed(move_key[2]) : 
+			if Input.is_action_pressed(left_key) : 
 				velocity.x = dirction.x * player_move_speed
 				animated_sprite.flip_h = true
 				animated_sprite.play("a&d_move")
 				direct = Direct.left
-			if Input.is_key_pressed(move_key[0]) :
+			if Input.is_action_pressed(up_key) :
 				velocity.y = dirction.y *player_move_speed
 				animated_sprite.play("w_move")
 				direct = Direct.up
-			if Input.is_key_pressed(move_key[1]) : 
+			if Input.is_action_pressed(down_key) : 
 				velocity.y = dirction.y * player_move_speed
 				animated_sprite.play("s_move")
 				direct = Direct.down
@@ -64,12 +70,12 @@ func _physics_process(delta: float) -> void:
 			velocity.y += gravity * delta
 		# حرکت به سمت چپ و راست
 		if dirction : 
-			if Input.is_key_pressed(move_key[3]) :
+			if Input.is_action_pressed(right_key) :
 				velocity.x = dirction.x * player_move_speed
 				animated_sprite.flip_h = false
 				animated_sprite.play("a&d_move")
 				direct = Direct.right
-			if Input.is_key_pressed(move_key[2]) : 
+			if Input.is_action_pressed(left_key) : 
 				velocity.x = dirction.x * player_move_speed
 				animated_sprite.flip_h = true
 				animated_sprite.play("a&d_move")
@@ -79,7 +85,7 @@ func _physics_process(delta: float) -> void:
 			if direct != Direct.non : 
 				animated_sprite.play("idel_" + str(direct))
 		# پریدن پلیر
-		if Input.is_key_pressed(move_key[4]) and is_on_floor() : 
+		if Input.is_action_just_pressed(jump_key) and is_on_floor() : 
 			velocity.y -= player_jump_power
 
 
